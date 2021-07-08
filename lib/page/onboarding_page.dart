@@ -9,35 +9,35 @@ class OnBoardingPage extends StatelessWidget {
         child: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'A reader lives a thousand lives',
-              body: 'The man who never reads lives only one.',
+              title: 'A developer lives a thousand lives',
+              body: 'The man who uses documentation while coding is the king ',
               image: buildImage('assets/ebook.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Featured Books',
+              title: 'Featured Apps',
               body: 'Available right at your fingerprints',
               image: buildImage('assets/readingbook.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Simple UI',
-              body: 'For enhanced reading experience',
+              body: 'For enhanced viewing experience',
               image: buildImage('assets/manthumbs.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Today a reader, tomorrow a leader',
+              title: 'Today a developer, tomorrow a leader',
               body: 'Start your journey',
               footer: ButtonWidget(
-                text: 'Start Reading',
+                text: 'Start Using',
                 onClicked: () => goToHome(context),
               ),
               image: buildImage('assets/learn.png'),
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Read', style: TextStyle(fontWeight: FontWeight.w600)),
+          done: Text('Start', style: TextStyle(fontWeight: FontWeight.w600)),
           onDone: () => goToHome(context),
           showSkipButton: true,
           skip: Text('Skip'),
