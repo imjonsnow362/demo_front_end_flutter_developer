@@ -1,11 +1,11 @@
 import 'package:onboarding_screen_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
-import 'package:onboarding_screen_example/profile_page.dart';
 import 'package:onboarding_screen_example/shared/listitem.dart';
 import 'package:onboarding_screen_example/shared/listwidget.dart';
 
 import '../details.dart';
+import '../profile_page.dart';
 
 class NewApp extends StatelessWidget {
   @override
@@ -70,6 +70,7 @@ class _HomePageState extends State<HomePage>
   ];
 
   TabController _tabController;
+
   @override
   void initState() {
     super.initState();
@@ -86,39 +87,6 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build (BuildContext context){
     return Scaffold(
-        bottomNavigationBar: Container(
-          color: Color(0xFFFFFFFF),
-          child: TabBar(
-            controller: _tabController,
-            unselectedLabelColor: Colors.black,
-            indicator: UnderlineTabIndicator(
-              borderSide: BorderSide(width: 0.0),
-            ),
-            labelColor: Colors.white,
-            labelStyle: TextStyle(fontSize: 12.0),
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.home, color: Colors.black,),
-                text:'Home'
-                ),
-              Tab(
-                icon: Icon(Icons.folder_open_rounded, color: Colors.black,),
-                text:'Files'
-                ),
-              Tab(
-                icon: Icon(Icons.account_circle, color: Colors.black,),
-                text:'Account',
-                  onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()),
-                );},
-              ),
-              Tab(
-                icon: Icon(Icons.access_alarm, color: Colors.black,),
-                text:'Clock'
-                ),
-              ]
-          ),
-        ),
         appBar: AppBar(
           toolbarHeight: 120.0,
           leading: IconButton(
@@ -126,12 +94,20 @@ class _HomePageState extends State<HomePage>
               Icons.category,
               color: Colors.black,
             ),
-            onPressed: () {},
+              onPressed: () {},
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.account_circle),
+              color: Colors.black,
               onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              color: Colors.black,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()),
+                );},
             ),
           ],
           backgroundColor: Color(0XFFFAFAFA),
